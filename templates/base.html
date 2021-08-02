@@ -48,7 +48,7 @@
                     <li class="nav-top">
                         <a href="{% url 'home' %}">首页</a>
                     </li>
-                    <li class="dropdown nav-top">
+                    <li class="dropdown nav-top" id='about'>
                         <a href="#" class="dropdown-toggle on" data-toggle="dropdown">
                             公司简介</a>
                         <ul class="dropdown-menu">
@@ -70,11 +70,11 @@
                         <a href="#" class="dropdown-toggle on" data-toggle="dropdown">
                             产品中心</a>
                         <ul class="dropdown-menu">
-                            <li><a href="{% url 'productsApp:robot' %}">
+                            <li><a href="{% url 'productsApp:products' 'robot' %}">
                                     家用机器人</a></li>
-                            <li><a href="{% url 'productsApp:monitoring' %}">
+                            <li><a href="{% url 'productsApp:products' 'monitor' %}">
                                     智能监控</a></li>
-                            <li><a href="{% url 'productsApp:face' %}">
+                            <li><a href="{% url 'productsApp:products' 'face' %}">
                                     人脸识别解决方案</a></li>
                         </ul>
                     </li>
@@ -121,9 +121,9 @@
             <div class="col-md-2">
                 <dl>
                     <dt>产品中心</dt>
-                    <dd><a href="{% url 'productsApp:robot' %}">家用机器人</a></dd>
-                    <dd><a href="{% url 'productsApp:monitoring' %}">智能监控</a></dd>
-                    <dd><a href="{% url 'productsApp:face' %}">人脸识别解决方案</a></dd>
+                    <dd><a href="{% url 'productsApp:products' 'robot' %}">家用机器人</a></dd>
+                    <dd><a href="{% url 'productsApp:products' 'monitor' %}">智能监控</a></dd>
+                    <dd><a href="{% url 'productsApp:products' 'face' %}">人脸识别解决方案</a></dd>
                 </dl>
             </div>
             <div class="col-md-2">
@@ -165,6 +165,9 @@
     <script type="text/JavaScript">
         $('#{{active_menu}}').addClass("active");
     </script>
+    <script type="text/JavaScript">
+        $('#{{sub_menu}}').addClass("active");
+     </script>
 </body>
 
 </html>
