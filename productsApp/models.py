@@ -21,5 +21,10 @@ class Product(models.Model):
         verbose_name='产品'
         verbose_name_plural='产品'
         ordering=('-publishDate',)
-""" class ProductImg(models.Model):
-    product=models.ForeignKey(Product,related_name='productImgs') """
+class ProductImg(models.Model):
+    product=models.ForeignKey(Product,related_name='productImgs',verbose_name='产品',on_delete=models.CASCADE)
+    photo=models.ImageField(upload_to='Product/',blank=True,verbose_name='产品图片')
+
+    class Meta:
+        verbose_name='产品图片'
+        verbose_name_plural='产品图片'
